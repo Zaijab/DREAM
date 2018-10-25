@@ -1,0 +1,374 @@
+                                  MODFLOW-2005     
+      U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
+                            VERSION 1.8.00 12/18/2009
+
+ LIST FILE: twri.lst
+                         UNIT    7
+
+ OPENING twri.ba6
+ FILE TYPE:BAS6   UNIT    8   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING twri.bc6
+ FILE TYPE:BCF6   UNIT   11   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING twri.wel
+ FILE TYPE:WEL   UNIT   12   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING twri.rch
+ FILE TYPE:RCH   UNIT   18   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING twri.sip
+ FILE TYPE:SIP   UNIT   19   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING twri.oc
+ FILE TYPE:OC   UNIT   22   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING twri.dis
+ FILE TYPE:DIS   UNIT   10   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING head.hed
+ FILE TYPE:DATA   UNIT   21   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING Tran1.dat
+ FILE TYPE:DATA   UNIT   31   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING Tran2.dat
+ FILE TYPE:DATA   UNIT   32   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING Tran3.dat
+ FILE TYPE:DATA   UNIT   33   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING Tran4.dat
+ FILE TYPE:DATA   UNIT   34   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING BC1.dat
+ FILE TYPE:DATA   UNIT   51   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ BAS -- BASIC PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT    8
+
+ DISCRETIZATION INPUT DATA READ FROM UNIT   10
+    2 LAYERS         9 ROWS         9 COLUMNS
+    1 STRESS PERIOD(S) IN SIMULATION
+ MODEL TIME UNIT IS SECONDS
+ MODEL LENGTH UNIT IS UNDEFINED
+  Confining bed flag for each layer:
+   1   0
+
+                     DELR =   500.000    
+
+                     DELC =   500.000    
+
+ TOP ELEVATION OF LAYER 1 =   200.000    
+
+   MODEL LAYER BOTTOM EL. =  -200.000     FOR LAYER   1
+
+ BOT. EL. OF QUASI-3D BED =  -300.000     FOR LAYER   1
+
+   MODEL LAYER BOTTOM EL. =  -400.000     FOR LAYER   2
+
+
+ STRESS PERIOD     LENGTH       TIME STEPS     MULTIPLIER FOR DELT    SS FLAG
+ ----------------------------------------------------------------------------
+        1         86400.00          1                    1.000         SS
+
+ STEADY-STATE SIMULATION
+
+
+
+ 
+ #SAMPLE----2 LAYERS, 9 ROWS, 9 COLUMNS; STEADY STATE; CONSTANT HEADS COLUMN 1   
+ #LAYERS 1 AND 2; RECHARGE, WELLS                                                
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   1
+ READING ON UNIT    8 WITH FORMAT: (20I4)              
+
+        1   2   3   4   5   6   7   8   9
+ ........................................
+   1   -1   1   1   1   1   1   1   1   1
+   2   -1   1   1   1   1   1   1   1   1
+   3   -1   1   1   1   1   1   1   1   1
+   4   -1   1   1   1   1   1   1   1   1
+   5   -1   1   1   1   1   1   1   1   1
+   6   -1   1   1   1   1   1   1   1   1
+   7   -1   1   1   1   1   1   1   1   1
+   8   -1   1   1   1   1   1   1   1   1
+   9   -1   1   1   1   1   1   1   1   1
+
+           BOUNDARY ARRAY =              1 FOR LAYER   2
+
+ AQUIFER HEAD WILL BE SET TO   999.99     AT ALL NO-FLOW NODES (IBOUND=0).
+
+
+
+                       INITIAL HEAD FOR LAYER   1
+ READING ON UNIT   51 WITH FORMAT: (FREE)              
+
+           1          2          3          4          5          6          7          8          9
+ ...................................................................................................
+   1    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   2    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   3    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   4    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   5    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   6    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   7    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   8    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+   9    0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00    
+
+             INITIAL HEAD =   0.00000     FOR LAYER   2
+
+ OUTPUT CONTROL IS SPECIFIED ONLY AT TIME STEPS FOR WHICH OUTPUT IS DESIRED
+ HEADS WILL BE SAVED WITH FORMAT: (15f15.5)           
+ HEAD PRINT FORMAT CODE IS  20    DRAWDOWN PRINT FORMAT CODE IS   0
+ HEADS WILL BE SAVED ON UNIT   21    DRAWDOWNS WILL BE SAVED ON UNIT    0
+
+ BCF -- BLOCK-CENTERED FLOW PACKAGE, VERSION 7, 5/2/2005
+         INPUT READ FROM UNIT 11
+ STEADY-STATE SIMULATION
+ HEAD AT CELLS THAT CONVERT TO DRY=  0.10000E+31
+ WETTING CAPABILITY IS NOT ACTIVE
+      LAYER  LAYER-TYPE CODE     INTERBLOCK T
+      --------------------------------------------
+         1            1          0 -- HARMONIC    
+         2            0          0 -- HARMONIC    
+
+
+
+           COLUMN TO ROW ANISOTROPY
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+   1.0000       1.0000    
+
+
+
+              HYD. COND. ALONG ROWS FOR LAYER   1
+ READING ON UNIT   32 WITH FORMAT: (FREE)              
+
+           1          2          3          4          5          6          7          8          9
+ ...................................................................................................
+   1   1.728E-02  5.859E-03  8.603E-02  7.401E-02  5.080E-02  2.675E-02  9.538E-02  5.141E-02  4.874E-02
+   2   6.672E-02  5.130E-03  2.906E-02  6.720E-02  1.837E-02  9.964E-02  5.287E-02  3.052E-02  4.667E-02
+   3   4.352E-02  6.453E-02  6.295E-02  7.583E-02  1.448E-02  9.526E-02  6.223E-03  4.206E-02  6.186E-02
+   4   8.870E-02  9.004E-02  2.809E-02  2.311E-02  5.918E-02  8.311E-02  9.356E-02  2.943E-02  7.692E-02
+   5   1.850E-03  3.064E-02  7.097E-02  6.502E-02  3.137E-02  2.579E-03  6.441E-02  2.286E-02  9.381E-02
+   6   8.615E-02  9.139E-03  4.303E-02  2.238E-02  8.288E-03  2.238E-02  1.035E-02  8.397E-02  8.288E-03
+   7   4.206E-02  5.991E-02  8.555E-02  4.048E-02  4.037E-03  8.883E-02  6.647E-02  1.290E-02  2.772E-02
+   8   4.158E-03  1.995E-02  3.368E-02  7.728E-02  4.401E-03  8.069E-02  7.595E-02  2.044E-02  5.700E-02
+   9   3.015E-02  9.441E-02  5.299E-02  7.388E-02  7.473E-02  4.133E-02  8.506E-02  1.497E-02  3.866E-02
+
+
+
+           VERT HYD COND /THICKNESS FOR LAYER   1
+ READING ON UNIT   33 WITH FORMAT: (FREE)              
+
+           1          2          3          4          5          6          7          8          9
+ ...................................................................................................
+   1   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   2   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   3   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   4   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   5   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   6   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   7   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   8   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+   9   5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08  5.000E-08
+
+
+
+               TRANSMIS. ALONG ROWS FOR LAYER   2
+ READING ON UNIT   34 WITH FORMAT: (FREE)              
+
+           1          2          3          4          5          6          7          8          9
+ ...................................................................................................
+   1   1.978E-03  3.952E-03  5.926E-03  7.900E-03  9.874E-03  1.185E-02  1.382E-02  1.580E-02  1.777E-02
+   2   3.952E-03  5.926E-03  7.900E-03  9.874E-03  1.185E-02  1.382E-02  1.580E-02  1.777E-02  1.974E-02
+   3   5.926E-03  7.900E-03  9.874E-03  1.185E-02  1.382E-02  1.580E-02  1.777E-02  1.974E-02  2.172E-02
+   4   7.900E-03  9.874E-03  1.185E-02  1.382E-02  1.580E-02  1.777E-02  1.974E-02  2.172E-02  2.369E-02
+   5   9.874E-03  1.185E-02  1.382E-02  1.580E-02  1.777E-02  1.974E-02  2.172E-02  2.369E-02  2.566E-02
+   6   1.185E-02  1.382E-02  1.580E-02  1.777E-02  1.974E-02  2.172E-02  2.369E-02  2.566E-02  2.764E-02
+   7   1.382E-02  1.580E-02  1.777E-02  1.974E-02  2.172E-02  2.369E-02  2.566E-02  2.764E-02  2.961E-02
+   8   1.580E-02  1.777E-02  1.974E-02  2.172E-02  2.369E-02  2.566E-02  2.764E-02  2.961E-02  3.159E-02
+   9   1.777E-02  1.974E-02  2.172E-02  2.369E-02  2.566E-02  2.764E-02  2.961E-02  3.159E-02  3.356E-02
+
+ WEL -- WELL PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT   12
+ No named parameters
+ MAXIMUM OF      3 ACTIVE WELLS AT ONE TIME
+
+
+     0 Well parameters
+
+ RCH -- RECHARGE PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT   18
+ No named parameters
+ OPTION 1 -- RECHARGE TO TOP LAYER
+
+
+     0 Recharge parameters
+
+ SIP -- STRONGLY-IMPLICIT PROCEDURE SOLUTION PACKAGE
+                    VERSION 7, 5/2/2005 INPUT READ FROM UNIT   19
+ MAXIMUM OF  50 ITERATIONS ALLOWED FOR CLOSURE
+  5 ITERATION PARAMETERS
+
+          SOLUTION BY THE STRONGLY IMPLICIT PROCEDURE
+          -------------------------------------------
+ MAXIMUM ITERATIONS ALLOWED FOR CLOSURE =       50
+                 ACCELERATION PARAMETER =     1.0000    
+      HEAD CHANGE CRITERION FOR CLOSURE =    0.10000E-02
+      SIP HEAD CHANGE PRINTOUT INTERVAL =        1
+
+     5 ITERATION PARAMETERS CALCULATED FROM SPECIFIED WSEED = 0.00100000 :
+
+  0.000000E+00 0.822172E+00 0.968377E+00 0.994377E+00 0.999000E+00
+1
+                            STRESS PERIOD NO.    1, LENGTH =   86400.00    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   86400.00    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1      3      8       10.00    
+      2      1      4      8       10.00    
+      3      1      5      2      -20.00    
+
+      3 WELLS
+
+                 RECHARGE =  5.000000E-05
+ 
+ SOLVING FOR HEAD 
+
+    16 ITERATIONS FOR TIME STEP   1 IN STRESS PERIOD    1
+
+ MAXIMUM HEAD CHANGE FOR EACH ITERATION:
+
+    HEAD CHANGE   HEAD CHANGE   HEAD CHANGE   HEAD CHANGE   HEAD CHANGE
+  LAYER,ROW,COL LAYER,ROW,COL LAYER,ROW,COL LAYER,ROW,COL LAYER,ROW,COL
+ ----------------------------------------------------------------------
+      7.366         12.36         32.79         27.96        -9.043    
+  (  1,  9,  9) (  1,  1,  9) (  1,  9,  9) (  2,  1,  9) (  2,  5,  8)
+      2.178        0.9539        0.7621        0.6919       -0.2414    
+  (  2,  1,  5) (  2,  5,  7) (  2,  2,  8) (  2,  2,  9) (  1,  1,  8)
+     0.4098E-01    0.1586E-01    0.1493E-01    0.5973E-02   -0.2097E-02
+  (  2,  3,  6) (  2,  8,  8) (  2,  9,  8) (  2,  6,  8) (  2,  7,  6)
+     0.9088E-03
+  (  2,  6,  5)
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD    1   TIME STEP   1
+    PRINT HEAD FOR ALL LAYERS
+    SAVE HEAD FOR ALL LAYERS
+1
+              HEAD IN LAYER   1 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+            1           2           3           4           5           6
+            7           8           9
+ ........................................................................
+   1    0.000       23.23       38.11       41.19       46.44       53.28    
+        57.37       59.60       61.11    
+   2    0.000       19.08       34.71       39.37       47.12       53.67    
+        56.92       60.26       61.69    
+   3    0.000       15.16       28.04       36.22       46.27       53.05    
+        58.22       61.76       62.30    
+   4    0.000       12.65       25.45       36.75       46.57       52.99    
+        57.20       61.13       62.46    
+   5    0.000       18.54       27.68       34.28       42.23       54.96    
+        58.87       61.56       62.70    
+   6    0.000       16.00       26.94       33.07       45.15       55.37    
+        59.28       61.89       63.63    
+   7    0.000       16.13       24.83       30.72       46.33       55.86    
+        57.40       61.23       63.10    
+   8    0.000       18.84       26.73       32.18       45.34       54.93    
+        56.71       60.40       62.53    
+   9    0.000       17.14       26.06       34.27       42.21       51.42    
+        55.73       59.98       62.43    
+1
+              HEAD IN LAYER   2 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+            1           2           3           4           5           6
+            7           8           9
+ ........................................................................
+   1    4.209       22.86       35.12       41.02       46.80       52.30    
+        56.15       58.55       59.75    
+   2    5.517       20.01       32.28       39.55       46.43       52.13    
+        56.05       58.69       59.91    
+   3    6.295       17.61       28.83       37.58       45.55       51.71    
+        56.10       58.92       60.08    
+   4    7.142       16.77       27.33       36.69       44.91       51.38    
+        55.85       58.78       60.07    
+   5    8.335       18.17       27.44       35.74       43.87       51.31    
+        55.92       58.74       60.04    
+   6    9.146       18.02       27.06       35.18       43.88       51.17    
+        55.74       58.57       59.96    
+   7    9.920       18.24       26.64       34.66       43.70       50.82    
+        55.13       58.10       59.57    
+   8    10.69       18.93       26.99       34.76       43.24       50.17    
+        54.53       57.58       59.13    
+   9    11.11       18.90       27.00       34.90       42.62       49.37    
+        54.03       57.24       58.87    
+
+ HEAD WILL BE SAVED ON UNIT   21 AT END OF TIME STEP   1, STRESS PERIOD    1
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  1 IN STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =     1728000.0000                 WELLS =          20.0000
+            RECHARGE =    77759992.0000              RECHARGE =         899.9999
+
+            TOTAL IN =    79487992.0000              TOTAL IN =         919.9999
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =    77758024.0000         CONSTANT HEAD =         899.9772
+               WELLS =     1728000.0000                 WELLS =          20.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =    79486024.0000             TOTAL OUT =         919.9772
+
+            IN - OUT =        1968.0000              IN - OUT =       2.2766E-02
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
+ STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+         TOTAL TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+1
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/10/16 15:54:09
+ Elapsed run time:  0.289 Seconds
+
