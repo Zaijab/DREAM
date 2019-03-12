@@ -1,0 +1,13 @@
+
+                                  MODFLOW-2005     
+    U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
+                             Version 1.8.00 12/18/2009                       
+
+ Using NAME file: twri.nam 
+ Run start date and time (yyyy/mm/dd hh:mm:ss): 2018/10/16 15:54:08
+
+ Solving:  Stress period:     1    Time step:     1    Ground-Water Flow Eqn.
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/10/16 15:54:09
+ Elapsed run time:  0.289 Seconds
+
+  Normal termination of simulation
