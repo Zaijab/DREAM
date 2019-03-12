@@ -150,7 +150,7 @@
 % example 16: Hydrogeophysics example
 
 % Clear memory
-%clear all; 
+% Clear all; 
 clc; close all; clear *;
 
 % Which example to run?
@@ -1094,15 +1094,6 @@ ParSet = GenParSet(Sequences,MCMCPar);
 %Save output for postprocessing
 save GWF1P81R05.mat
 
-%R4NE with error
-%
-
-% fx1=fx(1:1e6,:);
-% fx2=fx(1e6+1:2e6,:);
-% fx3=fx(2e6+1:end,:);
-% save GWF1P81R04fx1ne.mat fx1
-% save GWF1P81R04fx2ne.mat fx2
-% save GWF1P81R04fx3ne.mat fx3
 % --------------------------------------------------------------------------------------------- %
 % ------------------------------------ POSTPROCESSING ----------------------------------------- %
 %                                                                                               %
