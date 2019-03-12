@@ -1,7 +1,5 @@
 * Markov chain Monte Carlo simulation using the DREAM software package - MATLAB implementation
-
 Code used to conduct research at the University of Hawaii at Manoa given by Dr. Ahmed Elshall
-
 ** DREAM with sampling from past and snooker updates: DREAM_ZS
 
  The code presented herein is a Markov Chain Monte Carlo algorithm that runs multiple chains
@@ -12,12 +10,16 @@ Code used to conduct research at the University of Hawaii at Manoa given by Dr. 
  Ter Braak and Vrugt (2008)
 
  Sampling from past has three main advantages:
+
  (1) Circumvents the requirement of using N = d for posterior exploration. This will speed-up
  convergence to a limiting distribution, especially for high-dimensional problems (large d).
+
+
  (2) Outlier chains do not need explicit consideration. By sampling historical states,
  aberrant trajectories an jump directly to the modal region at any time during the
  simulation. The N path ways simulated with DREAM_(ZS) therefore maintain detailed balance at
  every singe step in the chain.
+
  (3) The transition kernel defining the jumps in each of the chains does not require
  information about the current states of the chains. This is of great advantage in a
  multi-processor environment where the N candidate points can be generated simultaneously so
@@ -32,31 +34,39 @@ Code used to conduct research at the University of Hawaii at Manoa given by Dr. 
  can be activated from the input file.
 
  DREAM_(ZS) developed by Jasper A. Vrugt and Cajo ter Braak
-
 ** IO
 
- SYNOPSIS: [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName)
-           [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName,Extra)
-           [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName,Extra,ParRange)
-           [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName,Extra,ParRange,Measurement)
+ SYNOPSIS:
 
- Input:    MCMCPar = structure with DREAM parameters
-           ModelName = name of the function
-           Extra = optional structure with arguments to be passed to function
-           ParRange = optional structure with parameter ranges
-           Measurement = optional structure with measurement information
+#+BEGIN_SRC matlab
+  [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName)
+  [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName,Extra)
+  [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName,Extra,ParRange)
+  [Sequences,X,Z,output] = dream_zs(MCMCPar,ModelName,Extra,ParRange,Measurement)
+#+END_SRC
 
- Output:   Sequences = 3D array with Markov chain evolution
-           X = final position of chains and correponding density values
-           Z = matrix with thinned sample history
-           output = structure with convergence properties, acceptance rate, CR values, etc.
+ Input:
+#+BEGIN_SRC matlab
+  MCMCPar % structure with DREAM parameters
+  ModelName % name of the function
+  Extra % optional structure with arguments to be passed to function
+  ParRange % optional structure with parameter ranges
+  Measurement % optional structure with measurement information
+#+END_SRC
+
+ Output:
+#+BEGIN_SRC matlab
+Sequences % 3D array with Markov chain evolution
+X % final position of chains and correponding density values
+Z % matrix with thinned sample history
+output % structure with convergence properties, acceptance rate, CR values, etc.
+#+END_SRC
 
  The directory \PostProcessing contains a script "PostProcMCMC" that will compute various
  posterior statistics (MEAN, STD, MAP, CORR) and create create various plots including,
  marginal posterior parameter distributions, R_stat convergence diagnostic, two-dimensional
  correlation plots of the posterior parameter samples, chain convergence plots, and parameter
  and total posterior simulation uncertainty ranges (interval can be specified)
-
 
 
 ** This algorithm has been described in:
@@ -89,10 +99,7 @@ Code used to conduct research at the University of Hawaii at Manoa given by Dr. 
        Accelerating Markov chain Monte Carlo simulation by differential evolution with
        self-adaptive randomized subspace sampling, International Journal of Nonlinear Sciences
        and Numerical Simulation}, 10(3), 273-290, 2009.
-
-
-
-**     Copyright (C) 2011-2012  the authors
+** Copyright (C) 2011-2012  the authors
 
      This program is free software: you can modify it under the terms of the GNU General
      Public License as published by the Free Software Foundation, either version 3 of the
@@ -103,31 +110,52 @@ Code used to conduct research at the University of Hawaii at Manoa given by Dr. 
      See the GNU General Public License for more details.
 
 
-
 ** Written by Jasper A. Vrugt: jasper@uci.edu
 
  Version 0.5: January 2009
+
  Version 1.0: April 2011         Maintenance update, explicit treatment of prior distribution
+
  Version 1.1: August 2011        Whittle likelihood function (SPECTRAL ANALYSIS !!)
+
  Version 1.2: April 2012         Simplified code (removed variables) + graphical interface
+
  Version 1.3: June 2012          Simulations stored, new example, and updated likelihood func.
+
  Version 1.4: January 2013       Simplification of metrop.m and dream_zs.m
 
 ** Different test examples
- example 1:  n-dimensional banana shaped Gaussian distribution
- example 2:  n-dimensional Gaussian distribution
- example 3:  n-dimensional multimodal mixture distribution
- example 4:  real-world example using hymod rainfall - runoff model (HYMOD code in MATLAB)
- example 4.1: GW model
- example 5:  real-world example using hymod rainfall - runoff model (HYMOD code in FORTRAN)
- example 6:  rainfall-runoff model with generalized log-likelihood function
- example 7:  HYDRUS-1D soil hydraulic model: using prior information on soil hydraulic parameters
- example 8:  multivariate student t distribution
- example 9:  Rainfall-runoff model with Whittle's likelihood function
- example 10: the use of prior information in a multimodel mixture distrbibution
- example 11: multivariate student t distribution
- example 12: pedometrics problem involving variogram fitting
- example 13: Nash-Cascade example --> heteroscedastic errors
- example 14: ABC inference for hydrologic model
- example 15: ABC inference using 10 bivariate normal distributions
- example 16: Hydrogeophysics example
+
+ Example 1:  N-dimensional banana shaped Gaussian distribution
+
+ Example 2:  N-dimensional Gaussian distribution
+
+ Example 3:  N-dimensional multimodal mixture distribution
+
+ Example 4:  Real-world example using hymod rainfall - runoff model (HYMOD code in MATLAB)
+
+ Example 5:  Real-world example using hymod rainfall - runoff model (HYMOD code in FORTRAN)
+
+ Example 6:  Rainfall-runoff model with generalized log-likelihood function
+
+ Example 7:  HYDRUS-1D soil hydraulic model: using prior information on soil hydraulic parameters
+
+ Example 8:  Multivariate student t distribution
+
+ Example 9:  Rainfall-runoff model with Whittle's likelihood function
+
+ Example 10: The use of prior information in a multimodel mixture distrbibution
+
+ Example 11: Multivariate student t distribution
+
+ Example 12: Pedometrics problem involving variogram fitting
+
+ Example 13: Nash-Cascade example --> heteroscedastic errors
+
+ Example 14: ABC inference for hydrologic model
+
+ Example 15: ABC inference using 10 bivariate normal distributions
+
+ Example 16: Hydrogeophysics example
+
+ Example 17: 81 Parameter Ground water PDE
