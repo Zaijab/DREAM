@@ -1,6 +1,0 @@
-
-                                  MODFLOW-2005     
-    U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
-                             Version 1.8.00 12/18/2009                       
-
- Can't find name file twri.nam or twri.nam.nam

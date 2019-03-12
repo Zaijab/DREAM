@@ -1,6 +1,0 @@
-         0  1.00E+30         0  0.00E+00         0         0  IBCFCB,HDRY,IWDFLG,WETFCT,IWETIT,IHDWET
- 1 0
-EXTERNAL   31   1.0 (free)  1       # 1.000000E+00  TRPY
-EXTERNAL   32   1.0 (free)  1       # 0.001
-EXTERNAL   33   1.0 (free)  1       # 2.000000E-08  VCONT layer   1
-EXTERNAL   34   1.0 (free)  1       # 0.02
